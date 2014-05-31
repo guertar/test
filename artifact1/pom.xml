@@ -6,7 +6,7 @@
   <name>name1</name>
   
   
- <dependencies>
+    <dependencies>
  
 		<!-- Spring framework -->
 		<dependency>
