@@ -4,15 +4,25 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import be.manager.model.Hello;
+import be.service.UserManager;
 
 public class Test {
 
 	public static void main(String[] args) {
+		
+		
+		
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"context/spring.xml");
  
-		Hello obj = (Hello) context.getBean("hello");
-		obj.printHello();
+		UserManager userService  = (UserManager) context.getBean("userService");
+		try {
+			userService.loginUser("Ter");
+			System.out.println("hi ");
+		} catch (Exception e) {
+					e.printStackTrace();
+		}
 	}
 
 }

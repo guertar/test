@@ -6,5 +6,12 @@
 	<bean id="hello" class="be.manager.model.Hello">
 		<property name="name" value="tarek" />
 	</bean>
- 
+	
+	<bean id="userService" class="be.service.serviceImp.UserServiceImp"  init-method="init">
+		<property name="userManager" ref ="userManagerBean"/>
+	</bean>
+	
+	<bean id="userManagerBean" class="be.manager.managerImp.UserManagerImp">
+	</bean>
 </beans>
+ 
