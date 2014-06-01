@@ -1,6 +1,6 @@
 package be.service;
 
-public interface UserManager {
+public interface UserService {
 	
 	void loginUser(String userName) throws Exception;
 

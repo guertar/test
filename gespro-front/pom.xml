@@ -7,12 +7,39 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gespro-front Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
 	</properties>
- 
+
+
+	<build>
 	
+		<finalName>gespro</finalName>
+		<plugins>
+			<!-- Maven Tomcat Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<url>http://127.0.0.1:8080/manager/html</url>
+					<server>tomcat</server>
+					 <warFile>gespro.war</warFile>
+					
+				</configuration>
+			</plugin>
+			<!-- Maven compiler plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 	<dependencies>
 
 		<!-- Junit -->
@@ -26,7 +53,7 @@
 
 		<dependency>
 			<groupId>test</groupId>
-			<artifactId>gespro</artifactId>
+			<artifactId>gespro_back</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -37,13 +64,13 @@
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -51,7 +78,5 @@
 		</dependency>
 
 	</dependencies>
-	<build>
-		<finalName>gespro</finalName>
-	</build>
+	
 </project>

@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import be.manager.model.Hello;
-import be.service.UserManager;
+import be.service.UserService;
 
 public class Test {
 
@@ -16,7 +16,7 @@ public class Test {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"context/spring.xml");
  
-		UserManager userService  = (UserManager) context.getBean("userService");
+		UserService userService  = (UserService) context.getBean("userService");
 		try {
 			userService.loginUser("Ter");
 			System.out.println("hi ");
