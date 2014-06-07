@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>tu as réussi a te logger ${user} </h2>
+<A HREF="test">tester login</A>
 </body>
 </html>
