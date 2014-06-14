@@ -1,5 +1,7 @@
 package be.controller;
 
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class UserServiceController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	   public String redirectToAccuiel() {
-	      return "index";
+	      return "hello";
 	   }
 	
 	@RequestMapping(value={"/login"}, method = RequestMethod.GET)
