@@ -23,13 +23,13 @@ public class SessionFilter implements Filter{
     	HttpServletRequest request = (HttpServletRequest) req;
     	HttpServletResponse response = (HttpServletResponse) res;
     	
-    	 if (!isLogged(request) && !isRequestToLogUser(request)){
-			// request.setAttribute("user", "ee");
-			 response.sendRedirect(request.getContextPath()+"/login");
-    	 }
-		 else{
-			 chain.doFilter(req, res);
-		 }
+    	//Laisse passer la requette, si l'utilisateur est authentifié ou bien si c'est une demande pour se logger
+    	
+    	if (isLogged(request)||isRequestToLogUser(request)){
+    		 chain.doFilter(req, res);
+    	}else{
+    		response.sendRedirect(request.getContextPath()+"/login");
+    	}
     }
     /**
      * 

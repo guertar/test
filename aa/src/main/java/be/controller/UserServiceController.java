@@ -18,7 +18,7 @@ public class UserServiceController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	   public String redirectToAccuiel() {
-	      return null;
+	      return "index";
 	   }
 	
 	@RequestMapping(value={"/login"}, method = RequestMethod.GET)
